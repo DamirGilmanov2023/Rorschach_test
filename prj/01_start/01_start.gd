@@ -8,7 +8,17 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.animal=0
+	Global.human=0
+	Global.fantastic=0
+	Global.tools=0
+	Global.motion=0
+	
+	Global.all_img=0
+	Global.not_all_img=0
+	Global.nechet=0
+	Global.forma=0
+	Global.color=0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

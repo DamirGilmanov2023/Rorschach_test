@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://03_chose03/03_chose03.png" type="Texture" id=1]
 [ext_resource path="res://03_chose01/check/14.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://03_chose01/check/18.png" type="Texture" id=17]
 [ext_resource path="res://03_chose01/check/15.png" type="Texture" id=18]
 [ext_resource path="res://03_chose03/v3/V32.png" type="Texture" id=19]
+[ext_resource path="res://03_chose03/03_chose03.gd" type="Script" id=20]
 [ext_resource path="res://03_chose01/check/17.png" type="Texture" id=21]
 [ext_resource path="res://03_chose01/check/13.png" type="Texture" id=22]
 [ext_resource path="res://03_chose01/check/8.png" type="Texture" id=23]
@@ -36,6 +37,7 @@ animations = [ {
 [node name="03_chose03" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 20 )
 
 [node name="03Chose03" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
@@ -70,3 +72,8 @@ animation = "play"
 [node name="Sprite" type="Sprite" parent="b2"]
 position = Vector2( 337, 27 )
 texture = ExtResource( 19 )
+
+[connection signal="button_down" from="b1" to="." method="_on_b1_button_down"]
+[connection signal="animation_finished" from="b1/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="button_down" from="b2" to="." method="_on_b2_button_down"]
+[connection signal="animation_finished" from="b2/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
